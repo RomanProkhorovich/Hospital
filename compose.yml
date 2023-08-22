@@ -1,0 +1,11 @@
+services:
+  db_pg_15:
+    image: 'postgres:15'
+    environment:
+      - 'POSTGRES_USER=USER'
+      - 'POSTGRES_PASSWORD=123'
+      - 'POSTGRES_HOST_AUTH_METHOD=trust'
+      - 'POSTGRES_DB=DB'
+
+    ports:
+      - '5432:5432'
