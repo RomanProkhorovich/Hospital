@@ -1,11 +1,11 @@
+version: '3.8'
 services:
-  db_pg_15:
+  pg_15:
     image: 'postgres:15'
-    environment:
-      - 'POSTGRES_USER=USER'
-      - 'POSTGRES_PASSWORD=123'
-      - 'POSTGRES_HOST_AUTH_METHOD=trust'
-      - 'POSTGRES_DB=DB'
 
+    environment:
+      POSTGRES_DB : 'db'
+      POSTGRES_PASSWORD : '123'
+      POSTGRES_USER: 'roma'
     ports:
-      - '5432:5432'
+      - '5555:5432'

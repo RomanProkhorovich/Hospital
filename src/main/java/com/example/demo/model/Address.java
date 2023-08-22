@@ -1,7 +1,9 @@
 package com.example.demo.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Objects;
@@ -9,7 +11,9 @@ import java.util.Objects;
 @Entity
 @Getter
 @Setter
-@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"city","street","house"}))
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"city", "street", "house"}))
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -24,6 +28,13 @@ public class Address {
 
     @Column(nullable = false)
     private Integer house;
+
+    public Address(String city, String street, Integer house) {
+
+        this.city = city;
+        this.street = street;
+        this.house = house;
+    }
 
     @Override
     public boolean equals(Object o) {

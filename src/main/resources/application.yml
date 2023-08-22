@@ -1,6 +1,9 @@
 spring:
+  properties:
+    hibernate:
+      dialect: 'org.hibernate.dialect.PostgreSQLDialect'
   datasource:
-    driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/DB
-    username: USER
-    password: 123
+    driverClassName: 'org.postgresql.Driver'
+    url: 'jdbc:postgresql://localhost:5555/db'
+    username: 'roma'
+    password: '123'

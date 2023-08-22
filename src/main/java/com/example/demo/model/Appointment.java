@@ -1,7 +1,9 @@
 package com.example.demo.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
@@ -10,6 +12,8 @@ import java.util.Objects;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -29,6 +33,13 @@ public class Appointment {
     private Address address;
 
     private LocalDateTime dateTime;
+
+    public Appointment(Doctor doctor, Patient patient, Address address, LocalDateTime dateTime) {
+        this.doctor = doctor;
+        this.patient = patient;
+        this.address = address;
+        this.dateTime = dateTime;
+    }
 
     @Override
     public boolean equals(Object o) {
