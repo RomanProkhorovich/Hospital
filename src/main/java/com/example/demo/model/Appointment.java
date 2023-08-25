@@ -16,22 +16,22 @@ import java.util.Objects;
 @AllArgsConstructor
 public class Appointment {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
     private Long id;
 
     @OneToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "doctor_id")
+    @JoinColumn(name = "doctor_id",nullable = false)
     private Doctor doctor;
 
     @OneToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "patient_id")
+    @JoinColumn(name = "patient_id", nullable = false)
     private Patient patient;
 
     @OneToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "address_id")
+    @JoinColumn(name = "address_id",nullable = false)
     private Address address;
 
+    @Column(nullable = false)
     private LocalDateTime dateTime;
 
     public Appointment(Doctor doctor, Patient patient, Address address, LocalDateTime dateTime) {

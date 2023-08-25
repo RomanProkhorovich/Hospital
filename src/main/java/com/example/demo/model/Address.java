@@ -15,9 +15,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = {"city", "street", "house"}))
 public class Address {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
+    @Id@Column(name = "id", nullable = false)
     private Long id;
 
     @Column(nullable = false)

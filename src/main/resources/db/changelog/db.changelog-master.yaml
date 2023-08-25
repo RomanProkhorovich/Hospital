@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      - file: db/changelog/changeset/create-address.sql
+  - include:
+      - file: db/changelog/changeset/create-doctor.sql
+  - include:
+      - file: db/changelog/changeset/create-patient.sql
+  - include:
+      - file: db/changelog/changeset/create-appointment.sql
